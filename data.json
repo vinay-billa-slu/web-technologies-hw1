@@ -1,0 +1,32 @@
+[
+  {
+    "reviewer_name": "Jane Doe",
+    "rating": "5 stars",
+    "review_text": "Great coffee and a wonderful atmosphere!",
+    "date": "2025-09-20"
+  },
+  {
+    "reviewer_name": "John Smith",
+    "rating": "4 stars",
+    "review_text": "Good food, but it was a bit crowded.",
+    "date": "2025-09-18"
+  },
+  {
+    "reviewer_name": "Emily Carter",
+    "rating": "5 stars",
+    "review_text": "The service was excellent. I highly recommend it.",
+    "date": "2025-09-15"
+  },
+  {
+    "reviewer_name": "Mike Davis",
+    "rating": "3 stars",
+    "review_text": "The prices were a bit high for what you get.",
+    "date": "2025-09-12"
+  },
+  {
+    "reviewer_name": "Sarah Miller",
+    "rating": "4 stars",
+    "review_text": "Came here with friends and had a great time.",
+    "date": "2025-09-10"
+  }
+]
