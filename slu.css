@@ -1,0 +1,70 @@
+/* Basic styling and font imports */
+:root {
+    --primary-color: #5c6bc0;
+    --accent-color: #f1f1f1;
+    --text-color: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--accent-color);
+}
+
+/* Header and Footer */
+header, footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Three-column layout for desktop */
+.three-column-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* 3 columns with different widths */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Styling for each column */
+.column {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Review card styling */
+.review-card {
+    border-bottom: 1px solid var(--accent-color);
+    padding: 10px 0;
+}
+
+.review-card:last-child {
+    border-bottom: none;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet view (2 columns) */
+@media (max-width: 1024px) {
+    .three-column-layout {
+        grid-template-columns: 1fr 1fr; /* Change to 2 columns */
+    }
+    .column.a {
+        grid-column: span 2; /* Filters span both columns on tablet */
+    }
+}
+
+/* Mobile view (1 column) */
+@media (max-width: 768px) {
+    .three-column-layout {
+        grid-template-columns: 1fr; /* Change to 1 column */
+        gap: 15px;
+    }
+}
