@@ -1,70 +1,274 @@
-/* Basic styling and font imports */
-:root {
-    --primary-color: #5c6bc0;
-    --accent-color: #f1f1f1;
-    --text-color: #333;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    background-color: var(--accent-color);
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Header and Footer */
-header, footer {
-    background-color: var(--primary-color);
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.nav-tab {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-tab:hover, .nav-tab.active {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 250px 1fr 350px;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Filter Section */
+.filter-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.filter-section h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.filter-group select, .filter-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.filter-group select:focus, .filter-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Featured Businesses Section */
+.featured-section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.section-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 20px;
-    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
-/* Three-column layout for desktop */
-.three-column-layout {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr; /* 3 columns with different widths */
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
+.business-card {
+    padding: 25px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease;
 }
 
-/* Styling for each column */
-.column {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.business-card:hover {
+    background-color: #f8f9ff;
 }
 
-/* Review card styling */
+.business-card:last-child {
+    border-bottom: none;
+}
+
+.business-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.business-info {
+    color: #666;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.business-rating {
+    display: inline-block;
+    background: #ffc107;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.business-description {
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Reviews Section */
+.reviews-section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
 .review-card {
-    border-bottom: 1px solid var(--accent-color);
-    padding: 10px 0;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease;
+}
+
+.review-card:hover {
+    background-color: #f8f9ff;
 }
 
 .review-card:last-child {
     border-bottom: none;
 }
 
-/* Media Queries for Responsiveness */
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
-/* Tablet view (2 columns) */
+.reviewer-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.review-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.star-rating {
+    color: #ffc107;
+    margin-right: 5px;
+}
+
+.review-date {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.review-text {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
-    .three-column-layout {
-        grid-template-columns: 1fr 1fr; /* Change to 2 columns */
+    .main-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
-    .column.a {
-        grid-column: span 2; /* Filters span both columns on tablet */
+    
+    .filter-section {
+        grid-column: 1 / -1;
+        position: static;
     }
 }
 
-/* Mobile view (1 column) */
 @media (max-width: 768px) {
-    .three-column-layout {
-        grid-template-columns: 1fr; /* Change to 1 column */
+    .main-content {
+        grid-template-columns: 1fr;
         gap: 15px;
     }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .nav-tabs {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+.error {
+    text-align: center;
+    padding: 20px;
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    margin: 10px;
 }
